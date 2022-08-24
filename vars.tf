@@ -39,5 +39,3 @@ variable "ELASTICACHE_NUMBER_OF_NODES" {}
 //RABBITMQ
 variable "RABBITMQ_INSTANCE_TYPE" {}
 variable "RABBITMQ_PORT" {}
-
-variable "INSTANCE_COUNT" {}
