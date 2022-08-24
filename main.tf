@@ -76,7 +76,7 @@ module "RABBITMQ" {
 
 // MODULE EKS
 module "EKS" {
-  source              = "git@github.com/dailypractice-all/tf-module-eks.git"
+  source              = "github.com/dailypractice-all/tf-module-eks.git"
   ENV                = var.ENV
   PRIVATE_SUBNET_IDS = module.VPC.PRIVATE_SUBNET_IDS
   PUBLIC_SUBNET_IDS  = module.VPC.PUBLIC_SUBNET_IDS
