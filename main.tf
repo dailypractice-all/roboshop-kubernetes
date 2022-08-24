@@ -73,3 +73,15 @@ module "RABBITMQ" {
   WORKSTATION_IP       = var.WORKSTATION_IP
   PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
 }
+
+// MODULE EKS
+module "EKS" {
+  source              = "git@github.com/dailypractice-all/tf-module-eks"
+  ENV                = var.ENV
+  PRIVATE_SUBNET_IDS = module.VPC.PRIVATE_SUBNET_IDS
+  PUBLIC_SUBNET_IDS  = module.VPC.PUBLIC_SUBNET_IDS
+  DESIRED_SIZE       = 2
+  MAX_SIZE           = 4
+  MIN_SIZE           = 2
+  CREATE_ALB_INGRESS = true
+}
